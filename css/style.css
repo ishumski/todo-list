@@ -42,9 +42,11 @@ body {
     padding: 0px; }
     .todo-list ol li {
       display: flex; }
-      .todo-list ol li span {
+      .todo-list ol li span,
+      .todo-list ol li input[type="text"] {
         flex-grow: 1; }
-      .todo-list ol li .delete-btn {
+      .todo-list ol li .delete-btn,
+      .todo-list ol li .edit-btn {
         border: none;
         background: none; }
     .todo-list ol.checked span {

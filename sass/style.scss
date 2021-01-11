@@ -49,10 +49,12 @@ body {
         padding: 0px;
         li {
             display: flex;
-            span {
+            span,
+            input[type="text"] {
                 flex-grow: 1;
             }
-            .delete-btn {
+            .delete-btn,
+            .edit-btn {
                 border: none;
                 background: none;
             }
@@ -66,7 +68,6 @@ body {
 }
 
 .delete-checked {
-   
     &-wrapper {
         display: flex;
         justify-content: flex-end;
