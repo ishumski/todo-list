@@ -10,6 +10,8 @@ body {
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
     padding: 24px;
     height: 50%;
@@ -38,6 +40,9 @@ body {
 }
 
 .todo-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
     ol {
         list-style-type: none;
         margin: 0px;
@@ -52,10 +57,18 @@ body {
                 background: none;
             }
         }
-    &.checked{
-        span{
-            text-decoration: line-through;
+        &.checked {
+            span {
+                text-decoration: line-through;
+            }
         }
     }
+}
+
+.delete-checked {
+   
+    &-wrapper {
+        display: flex;
+        justify-content: flex-end;
     }
 }

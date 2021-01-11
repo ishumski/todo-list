@@ -9,6 +9,8 @@ body {
   height: 100vh; }
 
 .container {
+  display: flex;
+  flex-direction: column;
   background-color: #fff;
   padding: 24px;
   height: 50%;
@@ -30,18 +32,26 @@ body {
     border: none;
     border-radius: 5px; }
 
-.todo-list ol {
-  list-style-type: none;
-  margin: 0px;
-  padding: 0px; }
-  .todo-list ol li {
-    display: flex; }
-    .todo-list ol li span {
-      flex-grow: 1; }
-    .todo-list ol li .delete-btn {
-      border: none;
-      background: none; }
-  .todo-list ol.checked span {
-    text-decoration: line-through; }
+.todo-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 20px; }
+  .todo-list ol {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px; }
+    .todo-list ol li {
+      display: flex; }
+      .todo-list ol li span {
+        flex-grow: 1; }
+      .todo-list ol li .delete-btn {
+        border: none;
+        background: none; }
+    .todo-list ol.checked span {
+      text-decoration: line-through; }
+
+.delete-checked-wrapper {
+  display: flex;
+  justify-content: flex-end; }
 
 /*# sourceMappingURL=style.css.map */
