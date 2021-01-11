@@ -1,0 +1,61 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: hotpink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 24px;
+    height: 50%;
+    overflow-y: auto;
+    width: 500px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px black;
+}
+
+.add-form {
+    form {
+        display: flex;
+        input {
+            flex-grow: 1;
+            height: 32px;
+        }
+        button[type="submit"] {
+            margin-left: 15px;
+            width: 40px;
+            background-color: #00d4ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+    }
+}
+
+.todo-list {
+    ol {
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+        li {
+            display: flex;
+            span {
+                flex-grow: 1;
+            }
+            .delete-btn {
+                border: none;
+                background: none;
+            }
+        }
+    &.checked{
+        span{
+            text-decoration: line-through;
+        }
+    }
+    }
+}
