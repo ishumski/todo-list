@@ -1,40 +1,90 @@
+$indie_flower_cursive: "Indie Flower", cursive;
+$color_white: #ffffff;
+$color_aqua: aqua;
+
 body {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    background-color: hotpink;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background-image: url("/image/firstnew.jpg");
+    background-size: 25%;
+    background-attachment: fixed;
 }
-
 .container {
+    margin-top: 150px;
+    width: 700px;
+    background-color: $color_white;
+    border-radius: 10px;
+    box-shadow: 0px -5px 15px 10px rgb(6, 233, 233);
     display: flex;
     flex-direction: column;
-    background-color: #fff;
-    padding: 24px;
-    height: 50%;
-    overflow-y: auto;
-    width: 500px;
-    border-radius: 5px;
-    box-shadow: 5px 5px 15px black;
 }
-
+h1 {
+    font-family: $indie_flower_cursive;
+    margin-top: -10px;
+    padding: 10px;
+    font-size: 40px;
+    letter-spacing: 2px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #fd90a5;
+    color: #fac63c;
+    text-shadow: red 1px 1px 1px;
+}
 .add-form {
     form {
         display: flex;
+        margin: 20px 30px;
+        outline: none;
+        transition: all 1s ease;
+        position: relative;
+
         input {
             flex-grow: 1;
-            height: 32px;
+            height: 50px;
+            font-family: $indie_flower_cursive;
+            font-size: 20px;
+            color: rgb(234, 0, 255);
+            background-color: #e8f0fd;
+            border: 1px solid rgb(6, 233, 233);
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            outline: none;
+            &:focus ~ label,
+            &:valid ~ label {
+                margin: -35px 0px 0px -25px;
+                letter-spacing: 2px;
+                font-size: 15px;
+                color: #83c3e0;
+            }
+            &:focus,
+            &:valid {
+                border: none;
+                border-bottom: 2px solid $color_aqua;
+            }
+        }
+        label {
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            color: rgb(255, 144, 199);
+            font-family: $indie_flower_cursive;
+            font-size: 18px;
+            font-weight: bold;
+            pointer-events: none;
+            transition: all 0.5s ease;
         }
         button[type="submit"] {
-            margin-left: 15px;
-            width: 40px;
-            background-color: #00d4ff;
-            color: #fff;
+            width: 60px;
+            height: 54px;
+            margin-left: 5px;
+            color: $color_white;
+            background-color: rgb(6, 233, 233);
             border: none;
-            border-radius: 5px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            outline: none;
         }
     }
 }
@@ -43,33 +93,62 @@ body {
     flex-grow: 1;
     overflow-y: auto;
     margin-bottom: 20px;
+
     ol {
         list-style-type: none;
         margin: 0px;
         padding: 0px;
+
         li {
-            display: flex;
-            span,
-            input[type="text"] {
+            width: 85%;
+            padding: 8px;
+            margin: 0 auto;
+            background-color: #fd90a5;
+            border-bottom: 1px solid #fd90a5;
+            border-radius: 10px;
+            background-color: #f3ffa263;
+            margin-bottom: 10px;
+            span {
                 flex-grow: 1;
             }
-            .delete-btn,
-            .edit-btn {
-                border: none;
-                background: none;
+            
+                .delete-btn,
+                .edit-btn {
+                    background: none;
+                    border: none;
+                    outline: none;
             }
-        }
-        &.checked {
+
             span {
-                text-decoration: line-through;
+                font-family: $indie_flower_cursive;
+                font-size: 20px;
+                color: #fac63c;
+                text-shadow: red 1px 1px 1px;
+            }
+
+            &.checked {
+                span {
+                    text-decoration: line-through;
+                }
             }
         }
     }
 }
-
 .delete-checked {
     &-wrapper {
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
+    }
+    &-btn {
+        margin-bottom: 15px;
+        padding: 10px;
+        color: #ffffff;
+        background-color: rgb(6, 233, 233);
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        font-family: "Indie Flower", cursive;
+        font-weight: bolder;
+        font-size: 20px;
     }
 }

@@ -5,24 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="/image/checklists.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a344c1290e.js" crossorigin="anonymous"></script>
+    <title>Pinkie Pie To Do List!</title>
 
-
-    <title>To DO LIST</title>
 </head>
 
 <body>
-
     <div class="container">
-        <h1>TO DO LIST</h1>
+        <h1>Pinkie Pie To Do List!</h1>
         <div class="add-form">
             <form>
-                <input type="text" name="text" placeholder="Here you can enter task">
-                <button type="submit">+</button>
+                <input type="text" name="text" required="">
+                <label>Put task for Pinkie Pie</label>
+                <button type="submit"><i class="fas fa-plus"></i></button>
             </form>
         </div>
+
         <div class="todo-list">
             <ol></ol>
         </div>
+
         <div class="delete-checked-wrapper">
             <button class="delete-checked-btn">Delete Checked</button>
         </div>
@@ -30,6 +35,5 @@
 
     <script type="module" src="/js/script.js"></script>
 </body>
-
 
 </html>

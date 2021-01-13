@@ -1,36 +1,78 @@
 body {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-  background-color: hotpink;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh; }
+  background-image: url("/image/firstnew.jpg");
+  background-size: 25%;
+  background-attachment: fixed; }
 
 .container {
+  margin-top: 150px;
+  width: 700px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px -5px 15px 10px #06e9e9;
   display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  padding: 24px;
-  height: 50%;
-  overflow-y: auto;
-  width: 500px;
-  border-radius: 5px;
-  box-shadow: 5px 5px 15px black; }
+  flex-direction: column; }
+
+h1 {
+  font-family: "Indie Flower", cursive;
+  margin-top: -10px;
+  padding: 10px;
+  font-size: 40px;
+  letter-spacing: 2px;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #fd90a5;
+  color: #fac63c;
+  text-shadow: red 1px 1px 1px; }
 
 .add-form form {
-  display: flex; }
+  display: flex;
+  margin: 20px 30px;
+  outline: none;
+  transition: all 1s ease;
+  position: relative; }
   .add-form form input {
     flex-grow: 1;
-    height: 32px; }
+    height: 50px;
+    font-family: "Indie Flower", cursive;
+    font-size: 20px;
+    color: #ea00ff;
+    background-color: #e8f0fd;
+    border: 1px solid #06e9e9;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    outline: none; }
+    .add-form form input:focus ~ label, .add-form form input:valid ~ label {
+      margin: -35px 0px 0px -25px;
+      letter-spacing: 2px;
+      font-size: 15px;
+      color: #83c3e0; }
+    .add-form form input:focus, .add-form form input:valid {
+      border: none;
+      border-bottom: 2px solid aqua; }
+  .add-form form label {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    color: #ff90c7;
+    font-family: "Indie Flower", cursive;
+    font-size: 18px;
+    font-weight: bold;
+    pointer-events: none;
+    transition: all 0.5s ease; }
   .add-form form button[type="submit"] {
-    margin-left: 15px;
-    width: 40px;
-    background-color: #00d4ff;
-    color: #fff;
+    width: 60px;
+    height: 54px;
+    margin-left: 5px;
+    color: #ffffff;
+    background-color: #06e9e9;
     border: none;
-    border-radius: 5px; }
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    outline: none; }
 
 .todo-list {
   flex-grow: 1;
@@ -41,19 +83,42 @@ body {
     margin: 0px;
     padding: 0px; }
     .todo-list ol li {
-      display: flex; }
-      .todo-list ol li span,
-      .todo-list ol li input[type="text"] {
+      width: 85%;
+      padding: 8px;
+      margin: 0 auto;
+      background-color: #fd90a5;
+      border-bottom: 1px solid #fd90a5;
+      border-radius: 10px;
+      background-color: #f3ffa263;
+      margin-bottom: 10px; }
+      .todo-list ol li span {
         flex-grow: 1; }
       .todo-list ol li .delete-btn,
       .todo-list ol li .edit-btn {
+        background: none;
         border: none;
-        background: none; }
-    .todo-list ol.checked span {
-      text-decoration: line-through; }
+        outline: none; }
+      .todo-list ol li span {
+        font-family: "Indie Flower", cursive;
+        font-size: 20px;
+        color: #fac63c;
+        text-shadow: red 1px 1px 1px; }
+      .todo-list ol li.checked span {
+        text-decoration: line-through; }
 
 .delete-checked-wrapper {
   display: flex;
-  justify-content: flex-end; }
+  justify-content: center; }
+.delete-checked-btn {
+  margin-bottom: 15px;
+  padding: 10px;
+  color: #ffffff;
+  background-color: #06e9e9;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-family: "Indie Flower", cursive;
+  font-weight: bolder;
+  font-size: 20px; }
 
 /*# sourceMappingURL=style.css.map */

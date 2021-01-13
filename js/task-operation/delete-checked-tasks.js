@@ -1,6 +1,7 @@
 function deleteChackedTasks(){
 const checkedTasks = document.querySelectorAll("li.checked");
-checkedTasks.forEach(checkedTask =>{
+
+checkedTasks.forEach((checkedTask) =>{
     checkedTask.remove();
 })
 }

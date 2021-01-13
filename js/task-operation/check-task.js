@@ -1,6 +1,4 @@
 function checkTask(event) {
-
-    // const target = event.target;
     const { target } = event;
     const { parentNode: li, checked } = target;//деструктуризация! заменяет следуюшие строчки: const li = target.parentNode; const checked = target.checked;
 
