@@ -31,7 +31,7 @@ export default function addTask(event) {
 
     newTodo.innerHTML = `
     <input type="checkbox">
-    <span>${todoText}<span> <button class="edit-btn"><i class="fas fa-edit"></i></button><button class="delete-btn"><i class="fas fa-trash-alt"></i></button>
+    <span>${todoText}</span><button class="edit-btn"><i class="fa fa-edit"></i></button><button class="delete-btn"><i class="fa fa-trash-alt"></i></button>
     
     `;
 
