@@ -1,5 +1,7 @@
+import{ENTER_KEY_CODE} from "../constance.js"
+
 function submitTask(event) {
-    if (event.keyCode !== 13) {
+    if (event.keyCode !== ENTER_KEY_CODE) {
         return;
     }
     const li = event.target.closest("li");
@@ -64,7 +66,7 @@ function editTask(event) {
         icon.classList.remove("fa-edit");
         icon.classList.add("fa-save");
         checkbox.disable = true;
-        
+
         return;
     }
 
