@@ -1,4 +1,7 @@
-import{ENTER_KEY_CODE} from "../constance.js"
+import { ENTER_KEY_CODE } from "../constance.js"
+import taskList from "../tasks.js"
+import { getTaskId } from "../utils.js"
+import storageService from "../storage-service.js"
 
 function submitTask(event) {
     if (event.keyCode !== ENTER_KEY_CODE) {
@@ -26,6 +29,11 @@ function saveTask(li, icon, checkbox) {
     icon.classList.add("fa-edit");
 
     checkbox.disable = false;
+
+    const taskId = getTaskId(li);
+    taskList.edit(taskId, newText);
+
+    storageService.set("tasks", JSON.stringify(taskList.tasks));
 }
 
 function editTask(event) {
