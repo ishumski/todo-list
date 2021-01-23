@@ -23,7 +23,7 @@ if (currentUrl === "/list/1") {
 }
 
 
-//для работы кликов кнопов в браузере "вперед" "назад"
+//для работы кликов кнопок в браузере "вперед" "назад"
 window.addEventListener("popstate", () => {
     if (window.location.pathname === "/list/1") {
         renderList();
