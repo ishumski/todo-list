@@ -3,22 +3,22 @@
 // import { generateId } from '../utils.js';
 // import listsList from '../lists-list.js';
 // import { renderList } from '../renderList.js';
+import listLists from '../lists-list.js';
 import { generateId } from '../utils.js';
 import addList from "./add-list.js";
-const deleteListBtn = document.querySelectorAll(".deleteList-btn");
+
 function deleteList(event) {
 
-    const { parentNode } = deleteListBtn;
-    console.log(deleteListBtn);
+    const { parentNode } = event.target.closest("deleteList-btn");
 
     const listId = parseInt(parentNode.id.split("-")[1], 10);
     
     newList.delete(listId);
     parentNode.remove();
+
+    storageService.set("lists", JSON.stringify(listsList.lists));
    
 }
-deleteList();
-console.log("parentNode");
 export default deleteList;
 
  
