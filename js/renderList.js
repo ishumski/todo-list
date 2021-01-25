@@ -1,12 +1,13 @@
 import taskList from "./tasks.js"
-import { rootDiv } from "./script.js";
 import listTemplate from "../js/templates/pages/list/index.js"
 import { getListIdByUrl } from "./utils.js";
 import addTask from "./task-operation/add-tasks.js";
 import deleteChackedTasks from "./task-operation/delete-checked-tasks.js"
 import { createTask } from "./task-operation/add-tasks.js"
 
-export function renderList() {
+const rootDiv = document.querySelector('.container');
+
+export default function renderList() {
     rootDiv.innerHTML = listTemplate;
 
     //находим форму добавления
