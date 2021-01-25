@@ -1,35 +1,15 @@
-import storageService from "../storage-service.js";
+import editTask from "../task-operation/edit-task.js";
 import checkTask from "../task-operation/check-task.js";
 import deleteTask from "../task-operation/delete-task.js";
-import editTask from "../task-operation/edit-task.js";
+
 import taskList from "../tasks.js";
+import storageService from "../storage-service.js";
 
-const todoList = document.querySelector(".todo-list ol");
-
-
-
-function genereteId(tasks) {
-
-    //получаем массив со всеми id  еtask
-    const ids = tasks.map(task => {
-        return task.id;
-    });
-
-
-    //если пустой массив, то начинаем id с 1
-    if (!ids.length) {
-        return 1;
-    }
-
-    // назодим максимальный id 
-    const maxId = Math.max(...ids);
-
-    //возвращаем новый, которы болььше максимального на 1
-    return maxId + 1;
-
-}
+import { generateId, getListIdByUrl } from "../utils.js"
 
 export function createTask(task) {
+    const todoList = document.querySelector(".todo-list ol");
+
     const newTodo = document.createElement("li");
 
     newTodo.setAttribute("id", `task-${task.id}`);
@@ -69,9 +49,11 @@ export default function addTask(event) {
     }
 
     const newTask = {//слзд обхект 
-        id: genereteId(taskList.tasks),
+        id: generateId(taskList.tasks),
+        parentListId: getListIdByUrl(),
         text: todoText,
         checked: false,
+
     };
 
     taskList.add(newTask);

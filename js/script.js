@@ -1,18 +1,8 @@
-import taskList from "./tasks.js"
+import { renderPage } from "./routing.js";
 
-import addTask, { createTask } from "./task-operation/add-tasks.js";
-import deleteChackedTasks from "./task-operation/delete-checked-tasks.js";
+renderPage();
 
-
-//находим форму добавления
-const deleteChackedBtn = document.querySelector(".delete-checked-btn");
-const addForm = document.querySelector(".add-form > form");//находим форму добавления
-
-//вешаем обработчик события submit (отправки) на форму
-addForm.addEventListener("submit", addTask);
-deleteChackedBtn.addEventListener("click", deleteChackedTasks);
-
-taskList.tasks.forEach(task => {
-    createTask(task);
+//для работы кликов кнопок в браузере "вперед" "назад"
+window.addEventListener("popstate", () => {
+    renderPage();
 });
-
