@@ -2,7 +2,6 @@ import storageService from '../storage-service.js';
 
 import { generateId } from '../utils.js';
 import listsList from '../lists-list.js';
-import deleteList from "./delete-list.js"
 import { navigateToUrl } from "../routing.js";
 
 export function createList(list) {

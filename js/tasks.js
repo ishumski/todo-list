@@ -18,6 +18,7 @@ class TaskList {
             if (task.id === id) {
                 return { ...task, text: text };//return { ...task, text }
             }
+
             return task;
         });
     }
@@ -27,10 +28,16 @@ class TaskList {
             if (task.id === id) {
                 return { ...task, checked: !task.checked };
             }
+
             return task;
         });
     };
+
+    deleteTaskByListId(listId) {
+        this.task = this.tasks.filter((task) => task.parentListId !== listId);
+    }
 }
+
 const tasks = JSON.parse(storageService.get("tasks"));
 
 const taskList = new TaskList(tasks ? tasks : []);

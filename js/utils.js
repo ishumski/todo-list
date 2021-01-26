@@ -1,16 +1,12 @@
-export function getTaskId(element) {
-
+export function getId(element) {
     return parseInt(element.id.split("-")[1]);
-
 }
 
 export function generateId(tasks) {
-
     //получаем массив со всеми id  еtask
     const ids = tasks.map(task => {
         return task.id;
     });
-
 
     //если пустой массив, то начинаем id с 1
     if (!ids.length) {
@@ -22,7 +18,6 @@ export function generateId(tasks) {
 
     //возвращаем новый, которы болььше максимального на 1
     return maxId + 1;
-
 }
 
 export function getListIdByUrl() {

@@ -1,5 +1,5 @@
 import taskList from "../tasks.js";
-import { getTaskId } from "../utils.js";
+import { getId } from "../utils.js";
 import storageService from "../storage-service.js"
 
 function deleteChackedTasks() {
@@ -7,7 +7,7 @@ function deleteChackedTasks() {
 
     checkedTasks.forEach((checkedTask) => {
 
-        const taskId = getTaskId(checkedTasks);
+        const taskId = getId(checkedTasks);
         taskList.delete(taskId);
 
         checkedTask.remove();

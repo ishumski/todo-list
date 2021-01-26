@@ -1,6 +1,6 @@
 import { ENTER_KEY_CODE } from "../constance.js"
 import taskList from "../tasks.js"
-import { getTaskId } from "../utils.js"
+import { getId } from "../utils.js"
 import storageService from "../storage-service.js"
 
 function submitTask(event) {
@@ -30,7 +30,7 @@ function saveTask(li, icon, checkbox) {
 
     checkbox.disable = false;
 
-    const taskId = getTaskId(li);
+    const taskId = getId(li);
     taskList.edit(taskId, newText);
 
     storageService.set("tasks", JSON.stringify(taskList.tasks));

@@ -7,5 +7,5 @@ export default function renderRegistration() {
     rootDiv.innerHTML = registrationTemplate;
 
     const registrationForm = document.querySelector(".registration-form > form");
-    registrationForm.addEventListener("submit", registerUser)
+    registrationForm.addEventListener("submit", registerUser);
 }
