@@ -27,7 +27,6 @@ export function renderPage() {
         return;
     }
 
-    console.log(currentUser)
     if (!currentUser.userData) {
         navigateToUrl(LOGIN_URL);
         return;

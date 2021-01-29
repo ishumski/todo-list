@@ -80,8 +80,6 @@ export default function registerUser(event) {
         return;
     }
 
-
-
     const hashedPassword = CryptoJS.SHA3(password);
 
     const newUser = {

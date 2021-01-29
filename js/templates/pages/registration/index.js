@@ -1,4 +1,5 @@
 const template = `
+<h1>Registration!</h1>
 <div class ="registration-form">
     <form>
         <label>Email</label>
@@ -12,7 +13,7 @@ const template = `
         <input name="repeatPassword" type="password">
         <span class="error"></span>
 
-        <button type="submit">Register</button>
+        <button type="submit" class="registration-btn">Register</button>
     </form>
 </div>
 
