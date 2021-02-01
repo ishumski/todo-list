@@ -1,9 +1,12 @@
 import taskList from "./tasks.js"
+
 import listTemplate from "../js/templates/pages/list/index.js"
-import { getListIdByUrl } from "./utils.js";
-import addTask from "./task-operation/add-tasks.js";
+
+import addTask, { createTask } from "./task-operation/add-tasks.js"
 import deleteChackedTasks from "./task-operation/delete-checked-tasks.js"
-import { createTask } from "./task-operation/add-tasks.js"
+
+import { getListIdByUrl } from "./utils.js";
+
 
 const rootDiv = document.querySelector('.container');
 

@@ -1,4 +1,5 @@
 const template = `
+<h1>Pinkie Pie Lists!</h1>
 <div class="add-form">
     <form>
         <input type="text" name="name" required="">

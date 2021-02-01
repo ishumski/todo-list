@@ -112,12 +112,12 @@ h1 {
             span {
                 flex-grow: 1;
             }
-            
-                .delete-btn,
-                .edit-btn {
-                    background: none;
-                    border: none;
-                    outline: none;
+
+            .delete-btn,
+            .edit-btn {
+                background: none;
+                border: none;
+                outline: none;
             }
 
             span {
@@ -146,6 +146,54 @@ h1 {
         color: #ffffff;
         background-color: rgb(6, 233, 233);
         border-radius: 10px;
+        border: none;
+        outline: none;
+        font-family: "Indie Flower", cursive;
+        font-weight: bolder;
+        font-size: 20px;
+    }
+}
+
+.error {
+    color: red;
+}
+
+.registration-form > form,
+.login-form > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    a {
+        text-decoration: none;
+        font-family: $indie_flower_cursive;
+        font-size: 18px;
+        font-weight: bold;
+        color: rgb(234, 0, 255);
+        margin-top: 15px;
+    }
+    input {
+        height: 50px;
+        font-size: 20px;
+        color: rgb(234, 0, 255);
+        background-color: #e8f0fd;
+        border: 1px solid rgb(6, 233, 233);
+    }
+
+    label {
+        color: rgb(255, 144, 199);
+        font-family: $indie_flower_cursive;
+        font-size: 18px;
+        font-weight: bold;
+        transition: all 0.5s ease;
+        pointer-events: none;
+    }
+    .registration-btn,
+    .login-btn {
+        margin: 15px 0px;
+        padding: 5px 15px;
+        color: #ffffff;
+        background-color: #06e9e9;
+        border-radius: 5px;
         border: none;
         outline: none;
         font-family: "Indie Flower", cursive;
