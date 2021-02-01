@@ -12,17 +12,17 @@ const INDEX_URLS = ["/", "/index.html"];
 
 const REGISTRATION_URL = "/registration";
 
-const LOGIN_URL = "/login";
+export const LOGIN_URL = "/login";
 
 export function renderPage() {
     const { pathname: currentUrl } = window.location;
 
-    if (currentUrl === REGISTRATION_URL) {
+    if (!currentUser.userData && currentUrl === REGISTRATION_URL) {
         renderRegistration();
         return;
     }
 
-    if (currentUrl === LOGIN_URL) {
+    if (!currentUser.userData && currentUrl === LOGIN_URL) {
         renderLogin();
         return;
     }
@@ -41,11 +41,12 @@ export function renderPage() {
 
         const list = lists.getListById(listId);
         if (list.userId !== currentUser.userData.id) {
-            navigateToUrl("/"); 
+            navigateToUrl("/");
         }
         renderList();
         return;
     }
+    navigateToUrl("/");
 }
 
 export function navigateToUrl(url) {

@@ -15,7 +15,6 @@ const template = `
         <button type="submit" class="login-btn">Register</button>
     </form>
 </div>
-
 `
 
 export default template;

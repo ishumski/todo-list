@@ -2,38 +2,31 @@ import currentUser from "../current-user.js";
 import { navigateToUrl } from "../routing.js";
 import storageService from "../storage-service.js";
 import userList from "../users.js"
+import { checkIfHasErrors, showErrors } from "../utils.js";
 
 const EMAIL_REGEX_LOGIN = /\S+@\S+\.\S+/;
 const MIN_PASSWORD_LENGTH_LOGIN = 8;
 const PASSWORD_REGEX_LOGIN = /(([a-zA-Z]+\d+)|(\d+[a-zA-Z]+))[a-zA-Z\d]/;
 
-
-function validateUser({ email, password }) {
+function validateLogin({ email, password }) {
 
     let errors = {
         email: [],
         password: [],
     }
 
-    if (!email) {
+    const user = userList.getUserByEmail(email);
+
+    if (!user) {
         errors = { ...errors, email: [...errors.email, "Email cannot be empty"] };
     }
+    const hashedPassword = CryptoJS.SHA3(password).toString();
 
-    if (email && !EMAIL_REGEX_LOGIN.test(email)) {
-        errors = { ...errors, email: [errors.email, "Email invalid format"] };
+    if (user.password !== hashedPassword) {
+        errors = {
+            ...errors, email: [...errors.email, "Password does not match"]
+        }
     }
-
-    if (!password) {
-        errors = { ...errors, password: [...errors.password, "Password cannot be empty"] };
-    }
-
-    if (password.length < MIN_PASSWORD_LENGTH_LOGIN) {
-        errors = { ...errors, password: [...errors.password, `Password should contain at least ${MIN_PASSWORD_LENGTH_LOGIN} characters`] };
-    }
-    if (password && !PASSWORD_REGEX_LOGIN) {
-        errors = { ...errors, email: [...errors.email, "Password invalid format"] };
-    }
-
     return errors;
 }
 
@@ -45,35 +38,25 @@ export default function loginUser(event) {
     const password = formData.get("password");
 
     const user = userList.getUserByEmail(email);
+    const errors = validateLogin({ email, password });
 
+    showErrors(errors);
 
+    const hasErrors = checkIfHasErrors(errors);
 
-    const errors = validateUser({ email, password });
-    let hasErrors = false;
-
-    for (let key in errors) {
-        const span = document.querySelector(`input[name="${key}"] + span`);
-        if (errors[key].length > 0) {
-            hasErrors = true;
-            const errorStr = errors[key].join("\n");
-
-            span.innerHTML = errorStr;
-        } else {
-            span.innerHTML = "";
-        }
+    if (hasErrors) {
+        return;
     }
-    // if (!user) {
-    //     alert("User does not exist");
-    //     return;
-    // }
 
-
+    if (!user) {
+        alert("User does not exist");
+        return;
+    }
 
     const hashedPassword = CryptoJS.SHA3(password).toString();
 
     if (user.password !== hashedPassword) {
         alert("Password does not match");
-
         return;
     }
 

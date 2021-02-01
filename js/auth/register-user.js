@@ -2,7 +2,7 @@ import currentUser from "../current-user.js";
 import { navigateToUrl } from "../routing.js";
 import storageService from "../storage-service.js";
 import userList from "../users.js"
-import { generateId } from "../utils.js";
+import { checkIfHasErrors, generateId, showErrors } from "../utils.js";
 
 const EMAIL_REGEX = /\S+@\S+\.\S+/;
 const MIN_PASSWORD_LENGTH = 8;
@@ -59,23 +59,9 @@ export default function registerUser(event) {
 
     const errors = validateRegistration({ email, password, repeatPassword });
 
-    let hasErrors = false;
+    showErrors(errors);
+    const hasErrors = checkIfHasErrors(errors);
 
-    for (let key in errors) {
-        const span = document.querySelector(`input[name = "${key}"] + span`);
-        if (errors[key].length > 0) {
-
-            hasErrors = true;
-
-            const errorStr = errors[key].join("\n");
-
-            span.innerHTML = errorStr;
-
-
-        } else {
-            span.innerHTML = '';
-        }
-    }
     if (hasErrors) {
         return;
     }
