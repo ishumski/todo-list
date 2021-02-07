@@ -31,13 +31,14 @@ function validateLogin({ email, password }) {
 }
 
 export default function loginUser(event) {
-
+    event.preventDefault();
     const formData = new FormData(event.target);
 
     const email = formData.get("email");
     const password = formData.get("password");
 
     const user = userList.getUserByEmail(email);
+
     const errors = validateLogin({ email, password });
 
     showErrors(errors);

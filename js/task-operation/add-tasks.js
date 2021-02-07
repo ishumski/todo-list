@@ -5,7 +5,8 @@ import deleteTask from "../task-operation/delete-task.js";
 import taskList from "../tasks.js";
 import storageService from "../storage-service.js";
 
-import { generateId, getListIdByUrl } from "../utils.js"
+import { generateId, getListIdByUrl} from "../utils.js"
+
 
 export function createTask(task) {
     const todoList = document.querySelector(".todo-list ol");
@@ -53,6 +54,7 @@ export default function addTask(event) {
         parentListId: getListIdByUrl(),
         text: todoText,
         checked: false,
+        // order: taskList.tasks.length + 1,
 
     };
 
